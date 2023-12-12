@@ -3,14 +3,14 @@
     justify-content: center;
     color: white;
     background-image: linear-gradient(to bottom, #333333 0%, #333333 40%, transparent 40%, transparent 100%);
-
+    min-height: 150px;
 }
 
 .details .left-section {
 
     width: 40%;
     padding-right: 10px;
-
+    height: max-content;
 }
 
 .details .right-section {
@@ -50,11 +50,11 @@
     height: 40%;
 }
 
-.card-body .title{
+.custom-card-body .title{
     color: #000;
 }
 
-.card-body {
+.custom-card-body {
 
     padding-left: 15px;
     padding-right: 0;

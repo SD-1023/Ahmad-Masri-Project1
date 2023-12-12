@@ -28,13 +28,15 @@
         <div class="container-fluid mx-5 my-1">
             <a class="navbar-brand fw-bold fs-4">Web Topics</a>
             <div class="d-flex justify-content-between">
-                <button class="btn btn-sm nav-btn fw-bold d-flex align-items-center" onclick="toggleTheme()">
+                <button class="btn btn-sm nav-btn fw-bold d-flex align-items-center" onclick="toggleThemeByButton()"
+                    id="themeButton">
                     <ion-icon name="moon-outline"></ion-icon> &nbsp;
                     <span class="button-text">
 
                         Dark Mode
-                    </span> </button>
-                <button class="btn btn-sm nav-btn fw-bold d-flex align-items-center ms-1" onclick="favorites()">
+                    </span>
+                </button>
+                <button class="btn btn-sm nav-btn fw-bold d-flex align-items-center ms-1" onclick="toggleFavorites()">
                     <ion-icon name="heart-outline"></ion-icon> &nbsp;
                     <span class="button-text">
                         Favourites
@@ -53,100 +55,24 @@
     </div>
 
 
-    <div class="details">
-
-        <div class="left-section">
-            <div class="about">
-                <h5 class="type">
-                    Web Development Language
-                </h5>
-                <h4 class="title">
-                    HTML
-                </h4>
-                <div class="rating">
-                    <ion-icon name="star" for="star5"></ion-icon>
-                    <ion-icon name="star" for="star4"></ion-icon>
-                    <ion-icon name="star" for="star3"></ion-icon>
-                    <ion-icon name="star" for="star2"></ion-icon>
-                    <ion-icon name="star" for="star1"></ion-icon>
-                </div>
-                <div class="description">
-                    HTML stands for Hyper Text Markup Language. HTML is the standard markup language for creating Web
-                    pages. HTML describes the structure of a Web page. HTML consists of a series of elements. HTML
-                    elements tell the browser how to display the content.HTML consists of a series of elements. HTML
-                    elements tell the browser how to display the content.HTML consists of a series of elements. HTML
-                    elements tell the browser how to display the content.
-                </div>
-            </div>
-            <div class="sub-topics">
-                <h3 class="sub-topics-title">
-                    HTML Sub Topics
-                </h3>
-
-                <p class="topic">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    HTML Syntax and structure
-                </p>
-                <p class="topic">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    HTML elements and attributes
-                </p>
-                <p class="topic">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    HTML forms and input elements
-                </p>
-                <p class="topic">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    HTML tables and lists
-                </p>
-                <p class="topic">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    HTML Multimedia elements
-                </p>
-                <p class="topic">
-                    <ion-icon name="checkmark-circle-outline"></ion-icon>
-                    HTML accessibility and semantic markup
-                </p>
-
-            </div>
-        </div>
-        <div class="right-section">
-
-            <div class="card p-0 border-0 rounded-0">
-
-                <img class="card-img-top h-50" src="Logos/javascript.jpg" alt="html">
-
-                <div class="card-body pt-1">
-                    <p class="card-type  no-overflow fw-bold mt-2">
-                        HTML by <a href="#">Sara Smith</a>
-                    </p>
-
-                    <div class="add-to-favorites">
-                        <h5 class="fs-6">
-                            Interested about this topic?
-                        </h5>
-                        <button>
-                            Add to Favourites
-                            <ion-icon name="heart-outline"></ion-icon>
-
-                        </button>
-                        <h5 class="credits">
-                            Unlimited Credits
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
+    <div class="details" id="details">
     </div>
 
     <footer class="footer container flex-container">
         Developed with <ion-icon class="heart-icon" name="heart"></ion-icon> &copy; 2023
     </footer>
 
-    <script src="index.js"></script>
+    <div class="favs" id="favs">
+        <div class="mx-5 p-0">
+            <h4 class="favs-title">My Favourite Topics</h4>
+            <div class="row g-3 overflow-auto pb-1" style="height: 130px;" id="favItems">
+            </div>
+        </div>
+    </div>
+
+    <script src="themeHandler.js"></script>
+    <script src="details.js"></script>
+    <script src="favoritesHandler.js"></script>
 
 </body>
 

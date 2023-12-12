@@ -56,6 +56,7 @@ body {
 .controllers .search input {
     width: 100%;
     background-color: var(--bg_default);
+    color: var(--body-text);
 
 }
 
@@ -84,7 +85,7 @@ body {
 
 }
 
-input:focus {
+input:focus, select:focus, select:active {
     outline: none;
 }
 
@@ -144,6 +145,7 @@ input:focus {
 
 .custom-card{
 
+    height: 300px;
     color: var(--body-text);
     background-color: var(--bg_default);
     border-radius: 10px;
@@ -154,17 +156,25 @@ input:focus {
 .custom-card-img-top{
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-
 }
 .custom-card-type{
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 400;
 }
 
+.custom-paragraph {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 46px;
+    text-overflow: ellipsis;
+  }
+
 .custom-card-author{
-    color: #686767;
+    color: #686868;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .custom-card a {
@@ -177,7 +187,7 @@ input:focus {
 }
 
 .rating ion-icon {
-    font-size: 14px;
+    font-size: 17px;
     color: rgb(225, 147, 3);
     float: right;
 }
@@ -194,34 +204,15 @@ input:focus {
     right: 0;
     width: 100%;
     display: none;
-    height: 155px;
-    padding: 10px var(--left-right-padding);
+    height: 160px;
     background-color: var(--bg_default);
 }
 
 .favs .favs-title {
     color: var(--body-text);
-    margin-block: 5px;
-}
-
-.favs .fav-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 109px);
-    gap: 10px;
-    height: 110px;
-    overflow-y: auto;
-}
-
-.fav-items .card {
-    height: 100px;
-}
-
-.fav-items .card .card-body .title {
-    font-size: 12px;
-}
-
-.fav-items img {
-    height: 50px;
+    margin-block: 12px;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 .footer {
