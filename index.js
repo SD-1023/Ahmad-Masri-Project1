@@ -1,5 +1,5 @@
-let allTopics;
-let currentTopics;
+let currentTopics, allTopics;
+
 const searchInput = document.getElementById('search-input');
 
 
@@ -13,8 +13,9 @@ const changeTopicsHandler = (topics) => {
 
     let temp = '';
 
-    topics.forEach((topic) => {
-        const card = `
+    if (topics.length) {
+        topics.forEach((topic) => {
+            const card = `
         <div class="col">
             <div class="card custom-card p-0 border-0">
                 <a href="./detail.html#${topic.id}">
@@ -44,9 +45,11 @@ const changeTopicsHandler = (topics) => {
             </div>
         </div>
         `;
-        temp += card;
-    });
-
+            temp += card;
+        });
+    }else {
+        temp = `<div class="col w-100 text-center fw-bold"> No results Found! </div>`;
+    }
     changePageContent(temp);
 }
 const setCategories = (topics) => {
@@ -60,11 +63,9 @@ const setCategories = (topics) => {
 
 
 }
-const chooseTopics = () => {
+const checkSortFilterHandler = () => {
 
-    currentTopics = searchHandler();
     currentTopics = filterHandler();
-
     changeTopicsHandler(sortHandler());
 }
 function debounce(func) {
@@ -74,21 +75,33 @@ function debounce(func) {
         timeoutId = setTimeout(func, 300);
     };
 }
+const searchTopicHandler = async () => {
 
-searchInput.addEventListener('input', debounce(chooseTopics));
+    try {
+        const searchValue = searchInput.value;
 
+        const res = await fetch('https://tap-web-1.herokuapp.com/topics/list?phrase=' + searchValue);
+        const topics = await res.json();
 
-const searchHandler = () => {
-    const text = searchInput.value;
-    let temp = [...allTopics];
+        allTopics = topics;
+        currentTopics = topics;
 
-    if (text.trim()) {
-        temp = temp.filter(t => t.topic.toLowerCase().includes(text.toLowerCase()));
+        checkSortFilterHandler();
+
     }
-    return temp;
+    catch (e) {
+        console.log(e);
+    }
 
 }
-const sortHandler = (e) => {
+
+searchInput.addEventListener('input', debounce(searchTopicHandler));
+
+const sortSelectHandler = () => {
+
+    changeTopicsHandler(sortHandler());
+}
+const sortHandler = () => {
 
     const sortSelect = document.getElementById("sort");
     const value = sortSelect.value;
@@ -107,10 +120,6 @@ const sortHandler = (e) => {
         });
 
     }
-
-    if (e) {
-        changeTopicsHandler(tempTopics);
-    }
     return tempTopics;
 }
 const filterHandler = () => {
@@ -120,19 +129,17 @@ const filterHandler = () => {
 
     if (value === 'default') {
 
-        return currentTopics;
+        return allTopics;
 
     } else {
 
-        return currentTopics.filter(topic => topic.category.includes(value));
+        return allTopics.filter(topic => topic.category.includes(value));
     }
 
 }
 
 
 (async function () {
-
-
     try {
 
         const loading = `<div class="col w-100 text-center fw-bold"> Loading.. </div>`;
@@ -142,11 +149,11 @@ const filterHandler = () => {
         const res = await fetch('https://tap-web-1.herokuapp.com/topics/list');
         const topics = await res.json();
 
-        allTopics = topics;
         currentTopics = topics;
+        allTopics = topics;
 
-        changeTopicsHandler(topics);
         setCategories(topics);
+        changeTopicsHandler(topics);
 
     }
     catch (e) {
@@ -158,7 +165,5 @@ const filterHandler = () => {
         `;
         changePageContent(error);
     }
-
-
 })();
 

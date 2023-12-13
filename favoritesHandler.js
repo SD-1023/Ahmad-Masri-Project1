@@ -18,7 +18,7 @@ const modifyRenderedFavTopics = () => {
         content += `
             <div class="col-1" style="width: 150px;">
             <div class="card custom-card p-0 border-0" style="height: 110px;">
-                <div class="card-img-top border" style="width: 100%; height: 60px;">
+                <div class="card-img-top border bg-white" style="width: 100%; height: 60px;">
                     <img class="custom-card-img-top" style="width: 100%;  height: 60px; object-fit: cover;"
                         src="Logos/${e.image}" alt="${e.topic}">
                 </div>

@@ -74,7 +74,7 @@
                 <div class="w-50 px-2 sort">
                     <label class="control-label fw-bold" for="sort">Sort by:</label>
 
-                    <select class=" fw-bold" name="sort" id="sort" onchange="sortHandler(this)">
+                    <select class=" fw-bold" name="sort" id="sort" onchange="sortSelectHandler()">
                         <option value="default">Default</option>
                         <option value="topic">Topic Title</option>
                         <option value="name">Author Name</option>
@@ -85,7 +85,7 @@
                 <div class="w-50 ps-2">
                     <label class="control-label fw-bold" for="filter">Filter by:</label>
 
-                    <select class="fw-bold" name="filter" id="filter" onchange="chooseTopics()">
+                    <select class="fw-bold" name="filter" id="filter" onchange="checkSortFilterHandler()">
                         <option value="default">Default</option>
 
                     </select>
@@ -111,7 +111,7 @@
     <div class="favs" id="favs">
         <div class="mx-5 p-0">
             <h4 class="favs-title">My Favourite Topics</h4>
-            <div class="row g-3 overflow-auto pb-1" style="height: 130px;" id="favItems">
+            <div class="row g-3 overflow-auto pb-1" style="height: 132px;" id="favItems">
             </div>
         </div>
     </div>
