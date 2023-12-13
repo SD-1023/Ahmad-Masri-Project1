@@ -227,6 +227,11 @@ input:focus, select:focus, select:active {
     margin-right: 7px;
 }
 
+.theme{
+    color: var(--body-text)!important;
+    /* background-color: var(--bg_default); */
+}
+
 @media screen and (max-width: 768px) {
     .search {
         border-right: 5px;

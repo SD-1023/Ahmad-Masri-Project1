@@ -11,6 +11,7 @@ const changePageContent = (content) => {
 
 const changeTopicsHandler = (topics) => {
 
+
     let temp = '';
 
     if (topics.length) {
@@ -47,8 +48,8 @@ const changeTopicsHandler = (topics) => {
         `;
             temp += card;
         });
-    }else {
-        temp = `<div class="col w-100 text-center fw-bold"> No results Found! </div>`;
+    } else {
+        temp = `<div class="col w-100 text-center fw-bold theme"> No results Found! </div>`;
     }
     changePageContent(temp);
 }
@@ -142,7 +143,7 @@ const filterHandler = () => {
 (async function () {
     try {
 
-        const loading = `<div class="col w-100 text-center fw-bold"> Loading.. </div>`;
+        const loading = `<div class="col w-100 text-center fw-bold theme"> Loading.. </div>`;
 
         changePageContent(loading);
 
@@ -157,7 +158,7 @@ const filterHandler = () => {
 
     }
     catch (e) {
-        const error = `<div class="col w-100 text-center fw-bold text-danger">
+        const error = `<div class="col w-100 text-center fw-bold theme">
 
             Something went wrong. Web topics failed to load.
         
