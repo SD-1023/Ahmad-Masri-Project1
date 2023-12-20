@@ -1,7 +1,7 @@
 {
   "name": "using-reactjs",
   "version": "0.1.0",
-  "homepage": "http://{SD-1023}.github.io/{Ahmad-Masri-Project1}",
+  "homepage": "https://SD-1023.github.io/Ahmad-Masri-Project1/tree/reactjs",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
