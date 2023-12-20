@@ -1,0 +1,22 @@
+.favs {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 155px;
+    padding: 10px var(--left-right-padding);
+    background-color: var(--bg_default);
+}
+
+.favs-title {
+    color: var(--body-text);
+    margin-block: 5px;
+}
+
+.fav-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 109px);
+    gap: 10px;
+    height: 110px;
+    overflow-y: auto;
+}

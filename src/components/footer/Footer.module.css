@@ -1,0 +1,10 @@
+.footer {
+    margin-block: 20px;
+}
+
+.footer ion-icon {
+    color: var(--heart-color);
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 7px;
+}

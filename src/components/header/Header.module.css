@@ -1,0 +1,50 @@
+.header {
+    justify-content: space-between;
+    padding: 10px var(--left-right-padding);
+    background-color: var(--bg_default);
+}
+
+.header .logo {
+    color: var(--brand-primary);
+}
+
+.header .header-control>button {
+    margin-right: 5px;
+}
+
+.header .header-control button {
+    background-color: var(--bg_default);
+    height: 40%;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    box-shadow: var(--box-shadow);
+    justify-content: space-between;
+    color: var(--body-text);
+}
+
+.header .header-control button:hover {
+    background-color: var(--brand-secondary);
+    color: white;
+}
+
+.header .header-control button ion-icon {
+    margin-right: 3px;
+}
+
+
+
+@media screen and (max-width: 573px) {
+
+    .button-text {
+        display: none;
+    }
+
+    .header .header-control {
+        width: auto;
+    }
+      
+    .header .header-control button {
+        font-size: smaller;
+    }
+}

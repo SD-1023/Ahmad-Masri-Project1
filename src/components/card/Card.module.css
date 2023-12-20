@@ -1,0 +1,83 @@
+.card {
+    box-shadow: 0 0 3px -1px var(--lines-color);
+    border-radius: var(--radius);
+    background-color: var(--bg_default);
+}
+
+.large-card-title {
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 46px;
+}
+
+.card-title{
+    font-weight: 700;
+    margin-block: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.small-card-title {
+    
+    font-size: 12px;
+    white-space: nowrap;
+
+}
+
+.card-img {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    object-fit: cover;
+    width: 100%;
+    background: white;
+
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--body-text);
+}
+
+
+.card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rating {
+    display: inline-block;
+}
+
+.rating ion-icon {
+    font-size: 14px;
+    color: rgb(225, 147, 3);
+    float: right;
+}
+
+.rating ion-icon:hover,
+.rating ion-icon:hover~ion-icon {
+    color: #ffcc00;
+}
+
+.author {
+
+    color: #686767;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+.type {
+    font-weight: 400;
+    font-size: 13px;
+    margin-bottom: 0;
+    margin-top: 7px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
