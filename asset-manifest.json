@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ahmad-Masri-Project1/static/css/main.631cb170.css",
-    "main.js": "/Ahmad-Masri-Project1/static/js/main.5347e264.js",
+    "main.js": "/Ahmad-Masri-Project1/static/js/main.8ea42da8.js",
     "static/js/787.141dfd4b.chunk.js": "/Ahmad-Masri-Project1/static/js/787.141dfd4b.chunk.js",
     "static/media/analytics.png": "/Ahmad-Masri-Project1/static/media/analytics.7e81c6ec23532162f2ea.png",
     "static/media/angular.png": "/Ahmad-Masri-Project1/static/media/angular.fe7fe0b7dad8f1ba6bbd.png",
@@ -41,11 +41,11 @@
     "static/media/react.webp": "/Ahmad-Masri-Project1/static/media/react.55afe679a76823cdda39.webp",
     "index.html": "/Ahmad-Masri-Project1/index.html",
     "main.631cb170.css.map": "/Ahmad-Masri-Project1/static/css/main.631cb170.css.map",
-    "main.5347e264.js.map": "/Ahmad-Masri-Project1/static/js/main.5347e264.js.map",
+    "main.8ea42da8.js.map": "/Ahmad-Masri-Project1/static/js/main.8ea42da8.js.map",
     "787.141dfd4b.chunk.js.map": "/Ahmad-Masri-Project1/static/js/787.141dfd4b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.631cb170.css",
-    "static/js/main.5347e264.js"
+    "static/js/main.8ea42da8.js"
   ]
 }
