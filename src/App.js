@@ -19,10 +19,13 @@ function App() {
     <div>
       <Header setIsFavoritesShown={setIsFavoritesShown} isFavoritesShown={isFavoritesShown} />
       <Brand />
+      {/* <BrowserRouter> */}
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="/detail.html/:id" element={<DetailsPage />} />
       </Routes>
+      {/* </BrowserRouter> */}
+
       <Footer />
       {isFavoritesShown && <Favorites />}
     </div>

@@ -7,7 +7,6 @@ const HomePage = () => {
     const [topicsCount, setTopicsCount] = useState(0);
     const [categories, setCategories] = useState([]);
 
-
     return <>
         <ControlSection categories={categories} />
         <ItemsCount topicsCount={topicsCount} />

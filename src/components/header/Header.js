@@ -44,13 +44,13 @@ const Header = ({ setIsFavoritesShown, isFavoritesShown }) => {
             toggleTheme(storedTheme === 'dark');
 
         } else {
-
             const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             toggleTheme(isDark);
         }
 
 
-    }, [])
+    }, []);
+
     const themeButton = () => {
         toggleTheme(themeText === 'Dark Mode');
     }
