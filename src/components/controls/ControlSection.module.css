@@ -5,20 +5,15 @@
     justify-content: flex-start;
 }
 
-.sort,
-.filter {
+.select {
     height: 85%;
     width: 13%;
     padding: 5px;
     color: var(--body-text);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-}
-
-.sort {
     border-left: 1px solid  var(--lines-color);
-    border-right: 1px solid var(--lines-color);
+    align-items: flex-start;
 }
 
 select {
@@ -53,7 +48,7 @@ select {
     
 }
 
-.input:focus {
+input:focus {
 
     outline: none;
 }
@@ -78,16 +73,11 @@ select {
         border-bottom: 1px solid var(--lines-color);
     }
 
-    .sort{
+    .select{
         width: 45%;
-        border-left: 0;
-        border-right: 1px solid var(--lines-color);
-    }
 
-    .filter {
-        width: 45%;
     }
-
+    
     .search-input {
         border-top-right-radius: 10px;
     }

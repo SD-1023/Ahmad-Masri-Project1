@@ -1,4 +1,4 @@
-import classes from './DetailContainer.module.css'
+import classes from './DetailContainer.module.css';
 
 const DetailContainer = ({ children }) => {
 

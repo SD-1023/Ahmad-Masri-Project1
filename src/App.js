@@ -1,33 +1,28 @@
 import { useState } from 'react';
 import './App.css';
-import Brand from './components/brand/Brand';
-import ControlSection from './components/controls/ControlSection';
+import Banner from './components/banner/Banner';
 import Header from './components/header/Header';
-import ItemsCount from './components/itemsCount/ItemsCount';
-import TopicsContainer from './components/topics/TopicsContainer';
 import Footer from './components/footer/Footer';
 import Favorites from './components/favorites/Favorites';
 import HomePage from './pages/HomePage';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import DetailsPage from './pages/DetailsPage';
+import { Route, Routes } from 'react-router-dom';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
+import useFavorites from './hooks/useFavorites';
+
 function App() {
 
-  const [isFavoritesShown, setIsFavoritesShown] = useState(false);
-
+  const { isShown, toggleFavoritesDisplay } = useFavorites();
 
   return (
     <div>
-      <Header setIsFavoritesShown={setIsFavoritesShown} isFavoritesShown={isFavoritesShown} />
-      <Brand />
-      {/* <BrowserRouter> */}
+      <Header toggleFavoritesDisplay={toggleFavoritesDisplay} />
+      <Banner />
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route path="/detail.html/:id" element={<DetailsPage />} />
       </Routes>
-      {/* </BrowserRouter> */}
-
       <Footer />
-      {isFavoritesShown && <Favorites />}
+      {isShown && <Favorites />}
     </div>
   );
 }

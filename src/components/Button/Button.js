@@ -1,6 +1,6 @@
 import utilsClasses from '../utils/utils.module.css';
 
-const HeaderButton = ({title, iconTitle, classes, action}) => {
+const Button = ({title, iconTitle, classes, action}) => {
 
     return <button className={`${utilsClasses['flex-container']}`} onClick={action}>
         <ion-icon name={iconTitle}></ion-icon>
@@ -10,4 +10,4 @@ const HeaderButton = ({title, iconTitle, classes, action}) => {
     </button>;
 }
 
-export default HeaderButton;
+export default Button;

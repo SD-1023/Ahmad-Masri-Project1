@@ -1,23 +1,23 @@
 import classes from './Card.module.css'
 import { Link } from 'react-router-dom';
 
-const Card = ({ topic, isFav }) => {
+const Card = ({ topic, isSmallCard }) => {
 
 
-    return <div className={classes.card} style={{ height: isFav ? '100px' : '' }}>
+    return <div className={classes.card} style={{ height: isSmallCard ? '100px' : '' }}>
         <Link to={`./detail.html/${topic.id}`}>
             <div>
-                <img className={classes['card-img']} style={{ height: isFav ? '45px' : '113px' }} src={require(`../../Logos/${topic.image}`)} alt={topic.topic} />
+                <img className={classes['card-img']} style={{ height: isSmallCard ? '45px' : '113px' }} src={require(`../../../public/Logos/${topic.image}`)} alt={topic.topic} />
             </div>
 
             <div className={classes["card-body"]}>
-                {!isFav && <h4 className={classes.type}>
+                {!isSmallCard && <h4 className={classes.type}>
 
                     {topic.category}
 
                 </h4>
                 }
-                <p className={`${classes['card-title']} ${isFav ? classes['small-car-title'] : classes['large-card-title']}`}>
+                <p className={`${classes['card-title']} ${isSmallCard ? classes['small-car-title'] : classes['large-card-title']}`}>
                     {topic.topic}
                 </p>
                 <div className={classes.rating}>
@@ -27,7 +27,7 @@ const Card = ({ topic, isFav }) => {
                     <ion-icon name="star" for="star2"></ion-icon>
                     <ion-icon name="star" for="star1"></ion-icon>
                 </div>
-                {!isFav && <h6 className={classes.author}>
+                {!isSmallCard && <h6 className={classes.author}>
                     Author: {topic.name}
                 </h6>
                 }

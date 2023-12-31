@@ -1,7 +1,7 @@
-import classes from './Brand.module.css';
+import classes from './Banner.module.css';
 import utilsClasses from '../utils/utils.module.css';
 
-const Brand = () => {
+const Banner = () => {
 
     return <div className={`${classes.brand} ${utilsClasses['flex-container']}`}>
         <div className={classes['center-text']}>
@@ -12,4 +12,4 @@ const Brand = () => {
 }
 
 
-export default Brand;
+export default Banner;

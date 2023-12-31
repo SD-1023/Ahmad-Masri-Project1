@@ -1,22 +1,16 @@
 import classes from './ControlSection.module.css';
 import utils from '../utils/utils.module.css';
 import CustomSelect from '../customSelect/CustomSelect';
+import CustomSearch from '../customSearch/CustomSearch';
 
-const ControlSection = ({categories}) => {
+const ControlSection = ({ categories, sorts, setSortValue, setFilterValue, setURL }) => {
 
-    const sorts = ['Topic Title', 'Author Name']
 
-    return <div  className={`${classes.controls} ${utils.container} ${utils['flex-container']}`}>
-
-        <div className={`${classes.search} ${utils['flex-container']}`}>
-            <ion-icon class={`${classes['search-outline']}`} name="search-outline"></ion-icon>
-            <input className={classes['search-input']} type="text" placeholder="Search the website..."/>
-        </div>
-
-        <CustomSelect classes={classes} label={'Sort'} opts={sorts}/>
-        <CustomSelect classes={classes} label={'Filter'} opts={categories}/>
-
-     
+    return <div className={`${classes.controls} ${utils.container} ${utils['flex-container']}`}>
+        <CustomSearch classes={classes} utils={utils} iconTitle={"search-outline"} placeholder={"Search the website..."}
+            setURL={setURL} />
+        <CustomSelect classes={classes} label={'Sort'} opts={sorts} action={setSortValue} />
+        <CustomSelect classes={classes} label={'Filter'} opts={categories} action={setFilterValue} />
     </div>;
 }
 

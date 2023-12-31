@@ -1,33 +1,28 @@
-import { useEffect, useState } from 'react';
+
 import Utils from '../utils/utils.module.css'
 import classes from './TopicsContainer.module.css'
 import Card from '../card/Card';
+import ItemsCount from '../itemsCount/ItemsCount';
+import TempContent from '../tempContent/TempContent';
 
-const TopicsContainer = ({setTopicsCount, setCategories}) => {
+const TopicsContainer = ({ topics, error, loading }) => {
 
-    const [topics, setTopics] = useState([]);
 
-    useEffect(() => {
+    return <>
+        <ItemsCount topicsCount={topics.length} />
 
-        const fetchTopics = async () => {
-            const res = await fetch('https://tap-web-1.herokuapp.com/topics/list');
-            setTopics(await res.json());
-        }
+        <div className={`${Utils.container} ${classes.items}`}>
 
-        fetchTopics();
-    }, []);
+            {error && <TempContent content={'Something went wrong!'} style={{ color: 'red' }} />}
+            {loading && !error && <TempContent content={'Loading...'} />}
 
-    useEffect(() => {
-        setTopicsCount(topics.length);
-        setCategories([...new Set(topics.map(topic => topic.category))]);
-    }, [topics]);
+            {topics && topics.length < 1 && !error && !loading && <TempContent content={'No topics found!'} />}
 
-    return <div className={`${Utils.container} ${classes.items}`}>
-
-        {topics.map((topic, i) => {
-            return <Card isFav={false} topic={topic} key={i}/>;
-        })}
-    </div>;
+            {topics && !error && !loading && topics.map((topic) => {
+                return <Card isSmallCard={false} topic={topic} key={topic.id} />;
+            })}
+        </div>
+    </>;
 
 
 }
