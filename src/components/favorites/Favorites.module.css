@@ -15,7 +15,7 @@
 
 .fav-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 109px);
+    grid-template-columns: repeat(auto-fit, 120px);
     gap: 10px;
     height: 110px;
     overflow-y: auto;

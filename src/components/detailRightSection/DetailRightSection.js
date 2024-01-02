@@ -2,17 +2,18 @@
 import { useContext, useState } from 'react';
 import classes from './DetailRightSection.module.css';
 import { FavoritesContext } from '../../contexts/FavoritesContext';
+import Rating from '../rating/Rating';
 
 const DetailRightSection = ({ topic }) => {
 
-    const {checkTopicExistence, addToFavorites, removeFromFavorites} = useContext(FavoritesContext);
+    const { checkTopicExistence, addToFavorites, removeFromFavorites } = useContext(FavoritesContext);
     const [isAddedToFavorites, setIsAddedToFavorites] = useState(checkTopicExistence(topic.id));
 
     const onButtonClicked = () => {
 
-        if(isAddedToFavorites){
+        if (isAddedToFavorites) {
             removeFromFavorites(topic.id);
-        }else {
+        } else {
             addToFavorites(topic);
         }
         setIsAddedToFavorites(state => !state);
@@ -22,7 +23,6 @@ const DetailRightSection = ({ topic }) => {
     return <div class={classes["right-section"]}>
 
         <img className={classes.img} src={require(`../../../public/Logos/${topic.image}`)} alt={topic.topic} />
-
         <div className={classes["card-body"]}>
 
             <h5 className={classes.title}>
@@ -30,6 +30,7 @@ const DetailRightSection = ({ topic }) => {
             </h5>
             <div className={classes["add-to-favorites"]}>
                 <h5>
+
                     Interested about this topic?
                 </h5>
                 <button onClick={onButtonClicked}>

@@ -1,3 +1,4 @@
+import Rating from '../rating/Rating';
 import classes from './DetailLeftSection.module.css';
 
 const DetailLeftSection = ({ topic }) => {
@@ -11,13 +12,8 @@ const DetailLeftSection = ({ topic }) => {
                 <h4 class={classes.title}>
                     {topic.topic}
                 </h4>
-                <div class={classes.rating}>
-                    <ion-icon name="star" for="star5"></ion-icon>
-                    <ion-icon name="star" for="star4"></ion-icon>
-                    <ion-icon name="star" for="star3"></ion-icon>
-                    <ion-icon name="star" for="star2"></ion-icon>
-                    <ion-icon name="star" for="star1"></ion-icon>
-                </div>
+                <Rating rate={topic.rating} style={{marginBottom: '10px'}}/>
+
                 <div class={classes.description}>
                     {topic.description}
                 </div>

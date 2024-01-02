@@ -2,33 +2,25 @@
 
     width: 40%;
     padding-right: 10px;
-
 }
-
 
 .type {
 
     color: var(--brand-secondary);
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 700;
     margin-top: 30px;
-
-
+    font-size: 16px;
 }
 
 .title {
+    font-size: 24px;
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.rating {
-
-    margin-bottom: 10px;
-}
-
 .about {
-
     margin-bottom: 15px;
 }
 
@@ -43,7 +35,6 @@
     margin-top: 55px;
     background-color: var(--bg_default);
     color: var(--body-text);
-
 }
 
 .sub-topics-title {
@@ -69,7 +60,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-
 }
 
 .topic ion-icon {
@@ -86,7 +76,6 @@
 
     .left-section {
         width: 100%;
-
     }
 
     .about,

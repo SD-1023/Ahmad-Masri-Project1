@@ -13,7 +13,7 @@ const DetailsPage = () => {
     const { data: topic, loading, error } = useFetchData('https://tap-web-1.herokuapp.com/topics/details/' + id);
 
 
-    console.log(topic);
+    
     return <div className={classes.details}>
 
         {error && <TempContent content={'Something went wrong!'} style={{ color: 'red',margin: '50px'}}/>}

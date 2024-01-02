@@ -1,3 +1,4 @@
+import Rating from '../rating/Rating';
 import classes from './Card.module.css'
 import { Link } from 'react-router-dom';
 
@@ -17,16 +18,17 @@ const Card = ({ topic, isSmallCard }) => {
 
                 </h4>
                 }
-                <p className={`${classes['card-title']} ${isSmallCard ? classes['small-car-title'] : classes['large-card-title']}`}>
+                <p className={`${classes['card-title']} ${isSmallCard ? classes['small-card-title'] : classes['large-card-title']}`}>
                     {topic.topic}
                 </p>
-                <div className={classes.rating}>
+                <Rating rate={topic.rating} style={{marginBottom: '10px', fontSize: '14px'}}/>
+                {/* <div className={classes.rating}>
                     <ion-icon name="star" for="star5"></ion-icon>
                     <ion-icon name="star" for="star4"></ion-icon>
                     <ion-icon name="star" for="star3"></ion-icon>
                     <ion-icon name="star" for="star2"></ion-icon>
                     <ion-icon name="star" for="star1"></ion-icon>
-                </div>
+                </div> */}
                 {!isSmallCard && <h6 className={classes.author}>
                     Author: {topic.name}
                 </h6>
