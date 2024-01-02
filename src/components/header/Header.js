@@ -4,6 +4,7 @@ import utilsClasses from '../utils/utils.module.css';
 import Button from '../Button/Button';
 import useThemeToggle from '../../hooks/useThemeToggle';
 import { FavoritesContext } from '../../contexts/FavoritesContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,9 +18,9 @@ const Header = () => {
     }
 
     return <header className={`${classes.header} ${utilsClasses['flex-container']}`}>
-        <h3 className={`${classes.logo}`}>
+        <Link to='/' className={`${classes.logo}`}>
             Web Topics
-        </h3>
+        </Link>
 
         <div className={`${classes['header-control']} ${utilsClasses['flex-container']}`}>
             <Button title={themeText} iconTitle={'moon-outline'} action={themeButton} classes={classes} />

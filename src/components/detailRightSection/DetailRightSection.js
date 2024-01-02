@@ -3,6 +3,7 @@ import { useContext, useState } from 'react';
 import classes from './DetailRightSection.module.css';
 import { FavoritesContext } from '../../contexts/FavoritesContext';
 import Rating from '../rating/Rating';
+import { Link } from 'react-router-dom';
 
 const DetailRightSection = ({ topic }) => {
 
@@ -26,7 +27,7 @@ const DetailRightSection = ({ topic }) => {
         <div className={classes["card-body"]}>
 
             <h5 className={classes.title}>
-                {topic.topic} by <a href="/">{topic.name}</a>
+                {topic.topic} by <Link  to="/">{topic.name}</Link>
             </h5>
             <div className={classes["add-to-favorites"]}>
                 <h5>

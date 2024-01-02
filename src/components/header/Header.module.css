@@ -6,6 +6,10 @@
 
 .header .logo {
     color: var(--brand-primary);
+    outline: none;
+    text-decoration: none;
+    font-weight: 700;
+    margin-block: 10px;
 }
 
 .header .header-control>button {

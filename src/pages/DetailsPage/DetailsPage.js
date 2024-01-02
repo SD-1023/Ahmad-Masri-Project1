@@ -12,7 +12,6 @@ const DetailsPage = () => {
     const { id } = useParams();
     const { data: topic, loading, error } = useFetchData('https://tap-web-1.herokuapp.com/topics/details/' + id);
 
-
     
     return <div className={classes.details}>
 
